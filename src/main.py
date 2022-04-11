@@ -13,5 +13,8 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
     print('ya krevedko')
+    print('test')
+    print('test')
+    print('test')
 # first comment sas
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
