@@ -4,50 +4,44 @@
         {
             "bk": "",
             "label": "TYPE",
-            "length": "10;",
-            "serial": "",
+            "serial": "1",
             "target": "TYPE",
-            "type": "$"
+            "type": "char(10)"
         },
         {
             "bk": "",
             "label": "DESCRIPTION",
-            "length": "50;",
-            "serial": "",
+            "serial": "2",
             "target": "DESCRIPTION",
-            "type": "$"
+            "type": "char(50)"
         },
         {
             "bk": "",
             "label": "C2C",
-            "length": "1;",
-            "serial": "",
+            "serial": "3",
             "target": "C2C",
-            "type": "$"
+            "type": "char(1)"
         },
         {
             "bk": "",
             "label": "SOURCE_SYSTEM_CD",
-            "length": "3;",
-            "serial": "",
+            "serial": "4",
             "target": "SOURCE_SYSTEM_CD",
-            "type": "$"
+            "type": "char(3)"
         },
         {
             "bk": "",
             "label": "ETL_EXTRACT_ID",
-            "length": "8;",
-            "serial": "",
+            "serial": "5",
             "target": "ETL_EXTRACT_ID",
-            "type": ""
+            "type": "numeric"
         },
         {
             "bk": "",
             "label": "ETL_AVAILABLE_DT",
-            "length": "8;",
-            "serial": "",
+            "serial": "6",
             "target": "ETL_AVAILABLE_DTTM",
-            "type": ""
+            "type": "numeric"
         }
     ],
     "tables": []

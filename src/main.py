@@ -42,31 +42,23 @@ if __name__ == '__main__':
                 print('output_table_name = ', line.split(sep='=')[-1].split(sep=';')[0].split(sep='.')[-1].strip())
             # колонки таблицы источника и таблицы _FULL
             if re.search(dict_of_key_words_mapping[0], line):
-                # clmnFull['mapping'].append({'name' : line.split(sep='=')[-1].split(sep=';')[0].strip()})
                 clmnSimple['target'] = line.split(sep='=')[-1].split(sep=';')[0].strip()
+                clmnSimple['serial'] = str(int(line.split(sep='col')[-1].split(sep='_')[0].strip())+1)
             if re.search('\Wlet _OUTPUT_col\d{1,}_length =', line):
-                # clmnFull['length'] = line.split(sep='=')[-1].strip()
-                # clmnFull['mapping'].append({'length': line.split(sep='=')[-1].strip()})
-                clmnSimple['length'] = line.split(sep='=')[-1].strip()
-                print(clmnSimple)
+                clmnSimple['length'] = line.split(sep='=')[-1].split(sep=';')[0].strip()
             if re.search('\Wlet _OUTPUT_col\d{1,}_type', line):
-                clmnSimple['type'] = line.split(sep='=')[-1].split(sep=';')[0].strip()
-                # clmnFull['mapping'].append({'type': line.split(sep='=')[-1].split(sep=';')[0].strip()})
-                print(clmnSimple)
-                # clmnFull['tables'].append(
-                #     {'test_privet': line.split(sep='=')[-1].split(sep=')')[0]})
+                # clmnSimple['type'] = line.split(sep='=')[-1].split(sep=';')[0].strip()
+                if line.split(sep='=')[-1].split(sep=';')[0].strip() == '$':
+                    clmnSimple['type'] = 'char'+'('+clmnSimple.get('length')+')'
+                else:
+                    clmnSimple['type'] = 'numeric'
             if re.search('\Wlet _OUTPUT_col\d{1,}_label =', line):
                 clmnSimple['label'] = line.split(sep='=')[-1].split(sep=')')[0].split(sep='(')[-1].strip()
-                print(clmnSimple)
+                del clmnSimple['length']
                 clmnToAppend = copy.deepcopy(clmnSimple)
-                # clmnFull['mapping'].append({'label': line.split(sep='=')[-1].split(sep=')')[0].split(sep='(')[-1].strip()})
-                # clmnFull['tables'].append(
-                #     {'test': line.split(sep='=')[-1].split(sep=')')[0].split(sep='(')[-1].strip()})
                 clmnFull['mapping'].append(clmnToAppend)
                 print('>>>>>>', clmnFull)
                 with open('./src/files/output/tst.json', 'w') as jsonf:
-                    # data = json.dumps(clmnFull)
-                    # data = json.loads(str(data))
                     # json.dump(json.loads(json.dumps(clmnFull)), jsonf, indent=4, sort_keys=True)
                     json.dump(clmnFull, jsonf, indent=4, sort_keys=True)
                     jsonf.close()
