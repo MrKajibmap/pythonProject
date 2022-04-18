@@ -1,48 +1,117 @@
 {
-    "librefs": [],
-    "mapping": [
+    "tasks": [
         {
-            "bk": "",
-            "label": "TYPE",
-            "serial": "1",
-            "target": "TYPE",
-            "type": "char(10)"
-        },
-        {
-            "bk": "",
-            "label": "DESCRIPTION",
-            "serial": "2",
-            "target": "DESCRIPTION",
-            "type": "char(50)"
-        },
-        {
-            "bk": "",
-            "label": "C2C",
-            "serial": "3",
-            "target": "C2C",
-            "type": "char(1)"
-        },
-        {
-            "bk": "",
-            "label": "SOURCE_SYSTEM_CD",
-            "serial": "4",
-            "target": "SOURCE_SYSTEM_CD",
-            "type": "char(3)"
-        },
-        {
-            "bk": "",
-            "label": "ETL_EXTRACT_ID",
-            "serial": "5",
-            "target": "ETL_EXTRACT_ID",
-            "type": "numeric"
-        },
-        {
-            "bk": "",
-            "label": "ETL_AVAILABLE_DT",
-            "serial": "6",
-            "target": "ETL_AVAILABLE_DTTM",
-            "type": "numeric"
+            "task_id": "1",
+            "description": "extract ",
+            "type": "stg_oracle_odbc ",
+            "source": [
+                {
+                    "connection": "DGP",
+                    "path": "DGTPAY03.IMB.RU",
+                    "entity": "ORACLE",
+                    "alias": "DGP_src"
+                }
+            ],
+            "target": [
+                {
+                    "connection": "work_stg",
+                    "path": "!ETL_DATA_ROOT/work_stg",
+                    "entity": "BASE",
+                    "alias": "work_stg"
+                }
+            ],
+            "mapping": [
+                {
+                    "serial": "1",
+                    "target": "TYPE",
+                    "expression": "TYPE",
+                    "type": "char(10)",
+                    "label": "TYPE",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "1",
+                            "alias": "TYPE_src",
+                            "column": "id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "2",
+                    "target": "DESCRIPTION",
+                    "expression": "DESCRIPTION",
+                    "type": "char(50)",
+                    "label": "DESCRIPTION",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "2",
+                            "alias": "DESCRIPTION_src",
+                            "column": "id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "3",
+                    "target": "C2C",
+                    "expression": "C2C",
+                    "type": "char(1)",
+                    "label": "C2C",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "3",
+                            "alias": "C2C_src",
+                            "column": "id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "4",
+                    "target": "SOURCE_SYSTEM_CD",
+                    "expression": "SOURCE_SYSTEM_CD",
+                    "type": "char(3)",
+                    "label": "SOURCE_SYSTEM_CD",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "4",
+                            "alias": "SOURCE_SYSTEM_CD_src",
+                            "column": "id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "5",
+                    "target": "ETL_EXTRACT_ID",
+                    "expression": "ETL_EXTRACT_ID",
+                    "type": "numeric",
+                    "label": "ETL_EXTRACT_ID",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "5",
+                            "alias": "ETL_EXTRACT_ID_src",
+                            "column": "id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "6",
+                    "target": "ETL_AVAILABLE_DTTM",
+                    "expression": "ETL_AVAILABLE_DTTM",
+                    "type": "numeric",
+                    "label": "ETL_AVAILABLE_DT",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "6",
+                            "alias": "ETL_AVAILABLE_DTTM_src",
+                            "column": "id"
+                        }
+                    ]
+                }
+            ]
         }
-    ],
-    "tables": []
+    ]
 }
