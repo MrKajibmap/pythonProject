@@ -1,0 +1,412 @@
+{
+    "tasks": [
+        {
+            "task_id": "0",
+            "description": "\u0412\u044b\u0433\u0440\u0443\u0437\u043a\u0430 \u0434\u0430\u043d\u043d\u044b\u0445",
+            "type": "",
+            "source": [
+                {
+                    "connection": "MIS",
+                    "path": "MIS_REVENUE_VS749",
+                    "entity": "vdmtb_Month",
+                    "alias": "MIS_src"
+                }
+            ],
+            "target": [
+                {
+                    "connection": "work_stg",
+                    "path": "!ETL_DATA_ROOT/work_stg",
+                    "entity": "VDMTB_MONTH",
+                    "alias": "work_stg"
+                }
+            ],
+            "mapping": [
+                {
+                    "serial": "1",
+                    "target": "month_nbr",
+                    "expression": "month_nbr",
+                    "type": "numeric",
+                    "label": "month_nbr",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "1",
+                            "alias": "month_nbr_src",
+                            "column": "month_nbr"
+                        }
+                    ]
+                },
+                {
+                    "serial": "2",
+                    "target": "month_name",
+                    "expression": "month_name",
+                    "type": "char(10)",
+                    "label": "month_name",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "2",
+                            "alias": "month_name_src",
+                            "column": "month_name"
+                        }
+                    ]
+                },
+                {
+                    "serial": "3",
+                    "target": "qrtr_nbr",
+                    "expression": "qrtr_nbr",
+                    "type": "numeric",
+                    "label": "qrtr_nbr",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "3",
+                            "alias": "qrtr_nbr_src",
+                            "column": "qrtr_nbr"
+                        }
+                    ]
+                },
+                {
+                    "serial": "4",
+                    "target": "half_year_nbr",
+                    "expression": "half_year_nbr",
+                    "type": "numeric",
+                    "label": "half_year_nbr",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "4",
+                            "alias": "half_year_nbr_src",
+                            "column": "half_year_nbr"
+                        }
+                    ]
+                },
+                {
+                    "serial": "5",
+                    "target": "year_nbr",
+                    "expression": "year_nbr",
+                    "type": "numeric",
+                    "label": "year_nbr",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "5",
+                            "alias": "year_nbr_src",
+                            "column": "year_nbr"
+                        }
+                    ]
+                },
+                {
+                    "serial": "6",
+                    "target": "month_len",
+                    "expression": "month_len",
+                    "type": "numeric",
+                    "label": "month_len",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "6",
+                            "alias": "month_len_src",
+                            "column": "month_len"
+                        }
+                    ]
+                },
+                {
+                    "serial": "7",
+                    "target": "month_ID",
+                    "expression": "month_ID",
+                    "type": "numeric",
+                    "label": "month_ID",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "7",
+                            "alias": "month_ID_src",
+                            "column": "month_ID"
+                        }
+                    ]
+                },
+                {
+                    "serial": "8",
+                    "target": "step_evt_id",
+                    "expression": "step_evt_id",
+                    "type": "numeric",
+                    "label": "step_evt_id",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "8",
+                            "alias": "step_evt_id_src",
+                            "column": "step_evt_id"
+                        }
+                    ]
+                },
+                {
+                    "serial": "9",
+                    "target": "ETL_EXTRACT_ID",
+                    "expression": "ETL_EXTRACT_ID",
+                    "type": "numeric",
+                    "label": "ETL_EXTRACT_ID",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "9",
+                            "alias": "ETL_EXTRACT_ID_src",
+                            "column": "ETL_EXTRACT_ID"
+                        }
+                    ]
+                },
+                {
+                    "serial": "10",
+                    "target": "ETL_RESOURCE_ID",
+                    "expression": "ETL_RESOURCE_ID",
+                    "type": "numeric",
+                    "label": "ETL_RESOURCE_ID",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "10",
+                            "alias": "ETL_RESOURCE_ID_src",
+                            "column": "ETL_RESOURCE_ID"
+                        }
+                    ]
+                },
+                {
+                    "serial": "11",
+                    "target": "ETL_DIGEST_CD",
+                    "expression": "ETL_DIGEST_CD",
+                    "type": "char(16)",
+                    "label": "ETL_DIGEST_CD",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "11",
+                            "alias": "ETL_DIGEST_CD_src",
+                            "column": "ETL_DIGEST_CD"
+                        }
+                    ]
+                },
+                {
+                    "serial": "12",
+                    "target": "SOURCE_SYSTEM_CD",
+                    "expression": "SOURCE_SYSTEM_CD",
+                    "type": "char(3)",
+                    "label": "SOURCE_SYSTEM_CD",
+                    "bk": "false",
+                    "source": [
+                        {
+                            "serial": "12",
+                            "alias": "SOURCE_SYSTEM_CD_src",
+                            "column": "SOURCE_SYSTEM_CD"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "task_id": "1",
+            "description": "\u0420\u0430\u0437\u043c\u0435\u0441\u0442\u0438\u0442\u044c \u0432\u044b\u0433\u0440\u0443\u0437\u043a\u0443 \u0432 \u0430\u0440\u0445\u0438\u0432\u0435",
+            "type": "",
+            "source": [
+                {
+                    "connection": "work_stg",
+                    "path": "DWH04.IMB.RU",
+                    "entity": "VDMTB_MONTH",
+                    "alias": "etl_stg_src"
+                }
+            ],
+            "target": [
+                {
+                    "connection": "etl_stg",
+                    "path": "",
+                    "entity": "VDMTB_MONTH_ARCH",
+                    "alias": ""
+                }
+            ],
+            "mapping": [
+                [
+                    {
+                        "serial": "1",
+                        "target": "month_nbr",
+                        "expression": "month_nbr",
+                        "type": "numeric",
+                        "label": "month_nbr",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "1",
+                                "alias": "month_nbr_src",
+                                "column": "month_nbr"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "2",
+                        "target": "month_name",
+                        "expression": "month_name",
+                        "type": "char(10)",
+                        "label": "month_name",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "2",
+                                "alias": "month_name_src",
+                                "column": "month_name"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "3",
+                        "target": "qrtr_nbr",
+                        "expression": "qrtr_nbr",
+                        "type": "numeric",
+                        "label": "qrtr_nbr",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "3",
+                                "alias": "qrtr_nbr_src",
+                                "column": "qrtr_nbr"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "4",
+                        "target": "half_year_nbr",
+                        "expression": "half_year_nbr",
+                        "type": "numeric",
+                        "label": "half_year_nbr",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "4",
+                                "alias": "half_year_nbr_src",
+                                "column": "half_year_nbr"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "5",
+                        "target": "year_nbr",
+                        "expression": "year_nbr",
+                        "type": "numeric",
+                        "label": "year_nbr",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "5",
+                                "alias": "year_nbr_src",
+                                "column": "year_nbr"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "6",
+                        "target": "month_len",
+                        "expression": "month_len",
+                        "type": "numeric",
+                        "label": "month_len",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "6",
+                                "alias": "month_len_src",
+                                "column": "month_len"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "7",
+                        "target": "month_ID",
+                        "expression": "month_ID",
+                        "type": "numeric",
+                        "label": "month_ID",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "7",
+                                "alias": "month_ID_src",
+                                "column": "month_ID"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "8",
+                        "target": "step_evt_id",
+                        "expression": "step_evt_id",
+                        "type": "numeric",
+                        "label": "step_evt_id",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "8",
+                                "alias": "step_evt_id_src",
+                                "column": "step_evt_id"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "9",
+                        "target": "ETL_EXTRACT_ID",
+                        "expression": "ETL_EXTRACT_ID",
+                        "type": "numeric",
+                        "label": "ETL_EXTRACT_ID",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "9",
+                                "alias": "ETL_EXTRACT_ID_src",
+                                "column": "ETL_EXTRACT_ID"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "10",
+                        "target": "ETL_RESOURCE_ID",
+                        "expression": "ETL_RESOURCE_ID",
+                        "type": "numeric",
+                        "label": "ETL_RESOURCE_ID",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "10",
+                                "alias": "ETL_RESOURCE_ID_src",
+                                "column": "ETL_RESOURCE_ID"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "11",
+                        "target": "ETL_DIGEST_CD",
+                        "expression": "ETL_DIGEST_CD",
+                        "type": "char(16)",
+                        "label": "ETL_DIGEST_CD",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "11",
+                                "alias": "ETL_DIGEST_CD_src",
+                                "column": "ETL_DIGEST_CD"
+                            }
+                        ]
+                    },
+                    {
+                        "serial": "12",
+                        "target": "SOURCE_SYSTEM_CD",
+                        "expression": "SOURCE_SYSTEM_CD",
+                        "type": "char(3)",
+                        "label": "SOURCE_SYSTEM_CD",
+                        "bk": "false",
+                        "source": [
+                            {
+                                "serial": "12",
+                                "alias": "SOURCE_SYSTEM_CD_src",
+                                "column": "SOURCE_SYSTEM_CD"
+                            }
+                        ]
+                    }
+                ]
+            ]
+        }
+    ]
+}

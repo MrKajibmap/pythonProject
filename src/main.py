@@ -14,24 +14,43 @@ if __name__ == '__main__':
         "tasks": [
             {
                 "task_id": "",
-                "description": "extract ...",
-                "type": "stg_oracle_odbc",
+                "description": "",
+                "type": "",
                 "source": [{
-                    "connection": "%s_prod_conn",
-                    "path": "fcchs",
-                    "entity": "...",
-                    "alias": "..._src"
+                    "connection": "",
+                    "path": "",
+                    "entity": "",
+                    "alias": ""
                 }],
                 "target": [
                     {
-                        "connection": "edw_hdfs",
-                        "path": "stg/raw/dwh",
-                        "entity": "...",
-                        "alias": "..._stg"
+                        "connection": "",
+                        "path": "",
+                        "entity": "",
+                        "alias": ""
                     }],
                 "mapping": []
             }]
     }
+    taskSinglePtrn = {
+                "task_id": "",
+                "description": "",
+                "type": "",
+                "source": [{
+                    "connection": "",
+                    "path": "",
+                    "entity": "",
+                    "alias": ""
+                }],
+                "target": [
+                    {
+                        "connection": "",
+                        "path": "",
+                        "entity": "",
+                        "alias": ""
+                    }],
+                "mapping": []
+            }
     clmnFullTmplt = {'mapping': [], 'tables': [], 'librefs': []}
     clmnSimpleTmplt = {
         "serial": "",
@@ -102,6 +121,7 @@ if __name__ == '__main__':
                     clmnSimple['type'] = 'char' + '(' + clmnSimple.get('length') + ')'
                 else:
                     clmnSimple['type'] = 'numeric'
+            # Доходим до конца
             if re.search('\Wlet _OUTPUT_col\d{1,}_label =', line):
                 clmnSimple['label'] = line.split(sep='=')[-1].split(sep=')')[0].split(sep='(')[-1].strip()
                 # delete extra fields not used in future
@@ -115,5 +135,3 @@ if __name__ == '__main__':
                     # json.dump(json.loads(json.dumps(clmnFull)), jsonf, indent=4, sort_keys=True)
                     json.dump(taskSimple, jsonf, indent=4)
                     jsonf.close()
-
-    print(list(libraries))

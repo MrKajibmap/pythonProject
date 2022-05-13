@@ -1,0 +1,48 @@
+{
+    "tasks": [
+        {
+            "task_id": "1",
+            "description": "t1 ...",
+            "type": "t1",
+            "source": [
+                {
+                    "connection": "%t1",
+                    "path": "t1",
+                    "entity": "..t1.",
+                    "alias": "...t1"
+                }
+            ],
+            "target": [
+                {
+                    "connection": "t1",
+                    "path": "stg/t1/dwh",
+                    "entity": "...",
+                    "alias": "...t1"
+                }
+            ],
+            "mapping": []
+        },
+        {
+            "task_id": "2",
+            "description": "t2 ...",
+            "type": "t2",
+            "source": [
+                {
+                    "connection": "%t2",
+                    "path": "t2",
+                    "entity": "...",
+                    "alias": "...t2"
+                }
+            ],
+            "target": [
+                {
+                    "connection": "t2",
+                    "path": "stg/t2/dwh",
+                    "entity": "...t2",
+                    "alias": "...t2"
+                }
+            ],
+            "mapping": []
+        }
+    ]
+}
