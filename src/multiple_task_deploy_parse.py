@@ -73,7 +73,8 @@ if __name__ == '__main__':
     taskFull = copy.deepcopy(taskExtractTmplt)
     TaskCnt = -1
     taskDesc = 'temp'
-    with open('./files/input/101_16_92_Extract_Mis_VDMTB_MONTH.sas', 'r', encoding='utf-8') as deploy:
+    # with open('./files/input/101_16_92_Extract_Mis_VDMTB_MONTH.sas', 'r', encoding='utf-8') as deploy:
+    with open('./files/input/101_75_15_Extract_CAS_CASIOBOP.sas', 'r', encoding='utf-8') as deploy:
         for line in deploy:
             # calc tasks count
             #  contains a transform mask
